@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-django
+  labels:
+    app: hello-django
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-django
+  template:
+    metadata:
+      labels:
+        app: hello-django
+    spec:
+      containers:
+      - name: hello-django
+        image: yashrajdighe/basic-django-app:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "180Mi"
+            cpu: "150m"
