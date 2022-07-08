@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-django
-        image: sanyamgupta45/django:1.0
+        image: sanyamgupta45/django:2.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
